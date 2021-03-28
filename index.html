@@ -5,24 +5,71 @@
         <title>Assignment 6 &laquo; Data Visualization Dashboard&raquo;</title>
         <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
         <link rel="stylesheet" href="main.css"/>
-        <!--Feel free to add more CSS files as needed-->
         <script type="text/javascript" src="https://d3js.org/d3.v5.min.js"></script>
     </head>
 <body>
-    <div class="header">
-        <h3>Assignment 6 &laquo; Data Visualization Dashboard &raquo;</h3>
-    </div>
-    <!--  We included a basic HTML structure for the 3 graphs here. Feel free to change this if you'd like  -->
-    <div class="row">
-        <div class="col-lg-6">
-            <div id="graph1"></div>
-            <div id="graph2"></div><br/>
+    <div>
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <div class="page-header center">
+                <h3>Assignment 6 &laquo; Data Visualization Dashboard &raquo;</h3>
+                <hr>
+                <h3>Top Video Games</h3>
+                <div id="graph1" aria-roledescription="Top 10 Video Game of all times based on Global Sales"></div>
+                <hr>
+                <h3>Popular Genre of Video Game by Region</h3>
+                <button type="button" class="btn btn-default" onclick="setData('North America')">North America</button>
+                <button type="button" class="btn btn-default" onclick="setData('Europe')">Europe</button>
+                <button type="button" class="btn btn-default" onclick="setData('Japan')">Japan</button>
+                <button type="button" class="btn btn-default" onclick="setData('Other regions')">Other Regions</button>
+                <button type="button" class="btn btn-default" onclick="setData('Global')">Global</button>
+                <h5 style="text-align: left">Hover over the pie chart for more info</h5>
+                <hr>
+                <div id="graph2" aria-roledescription="Popular Genre of Video Games in a given Region"></div>
+            
+                <hr>
+                <h3>Top Video Game Publishers based on Genre</h3>
+                <h5  style="margin-bottom:7px">Select Genre of Video Game</h5>
+                <button type="button" class="btn btn-default" onclick="setData3(0, 'Puzzle')">Puzzle</button>
+                <button type="button" class="btn btn-default" onclick="setData3(1, 'Role Playing')">Role Playing</button>
+                <button type="button" class="btn btn-default" onclick="setData3(2, 'Action')">Action</button>
+                <button type="button" class="btn btn-default" onclick="setData3(3, 'Shooter')">Shooter</button>
+                <button type="button" class="btn btn-default" onclick="setData3(4, 'Simulation')">Simulation</button>
+                <button type="button" class="btn btn-default" onclick="setData3(5, 'Racing')">Racing</button>
+                <button type="button" class="btn btn-default" onclick="setData3(6, 'Fighting')">Fighting</button>
+                <button type="button" class="btn btn-default" onclick="setData3(7, 'Strategy')">Strategy</button>
+                <button type="button" class="btn btn-default" onclick="setData3(8, 'Adventure')">Adventure</button>
+                <button type="button" class="btn btn-default" onclick="setData3(9, 'Sports')">Sports</button>
+                <button type="button" class="btn btn-default"  onclick="setData3(10, 'Platform')">Platform</button><br/>
+                <button type="button" style="margin-top:7px" class="btn btn-default" onclick="setData3(11, 'Miscellaneous')">Miscellaneous</button>
+                <div id="graph3" aria-roledescription="Top Video Game publishers based on Genre"></div><br/>
+                <hr>
+
+                <h3>Written Response</h3>
+                <h5 style="text-align: left"> 1. The first graph answers the question by measuring top 10 video games of all times by level of Global Sales. The bar chart allows us to see the top
+                    selling video game worldwide. The second graph shows the breakdown of video game genre for a given region based on the total video game sales of that region. This allows us 
+                    to determine which genre of video games is popular in a specific region measured by total sales. When hovering over the pie chart, more information such as total sales for the Genre 
+                    and what percent the genre sales account for the total video game sales for the region is displayed. The third graph shows each publisher's speciality or genre focus measured by the number of 
+                    video games published within a given genre. This allows us to identify the top publisher of a certain genre of video games by the frequency. An alternative way to determine 
+                    top publisher is to use Global Sales as measure. One challenge is that it could be more reflective of the publishers sales distribution and economies of scale rather than their focus on 
+                    a certain genre. Thus, if we want to pick a publisher that specialized on a specifc genre of video games, then the graph above would be more apporopriate. However, if we are simply focused on
+                    revenue of a publisher based on genre then using sales as a measure would be appropriate.</h5>
+
+                <h5 style="text-align: left">2. D3 is helpful because it binds the data we are trying to dispay to DOM (Document Object Model) elements allowing us to customize and view on the web.
+                    It is very helpful for making the data visualizaion component interactive and it can also be used with other JS frameworks such as vue, react and angular.</h5>
+                <h5 style="text-align: left">3. D3 may not be the best tool for large number of entries since the DOM manipulation can be slow. D3 may not also be the best tool if we 
+                    are working with sensitive information/data that needs to be concealed. D3 doesn't have predetermined visualizations so it may be time consuming to generate D3
+                    visulaizations for a simple chart that doesn't require customization.</h5><br/>
+
+                <h4>Accessible Data Visualization</h4>
+                <h5 style="text-align: left">4. Based on the second article, I included white space between slices of the pie chart to make it easier to estimate the portion of the slice for people who may be color blind. To view additional information
+                on the pie chart, users are required to hover over the chart which maybe inaccessible to inviduals who use assistive technology. I also changed the color of the buttons by checking the color contrast using WAVE(web accessiblity evaluation tool).</h5>
+                <h5 style="text-align: left">5. For the pie chart, displaying all of the additional information in a way that is readable without having users hover over the chart was challenging.
+                    Reflecting back, it would be more accessible to just display either the genre or percentage or total sales instead of all three.</h5><br/>
+            </div>
         </div>
-        <div class="col-lg-6">
-            <div id="graph3"></div>
-        </div>
+        <div class="col-md-2"></div>
     </div>
-    <!--Feel free to add more JavaScript files as needed-->
     <script type="text/javascript" src="main.js"></script>
 </body>
 </html>

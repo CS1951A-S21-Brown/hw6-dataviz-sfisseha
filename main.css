@@ -10,3 +10,35 @@
 }
 
 /* Include any custom CSS styling here! */
+button:focus {
+    outline: 0 !important;
+}
+
+.h5{
+    font-family: "Times New Roman", Times, serif;
+}
+
+/* button:focus {outline:0;}  */
+
+/* .btn-info{
+    background-color: black;
+    border-color: black
+} */
+svg {
+    display: block;
+    margin: 0 auto;
+    font: 10px sans-serif;
+}
+.tooltip {
+    position: absolute;
+    font-size: 12px;
+    min-width: 100px;
+    padding: 10px;
+    width:  auto;
+    height: auto;
+    pointer-events: none;
+    background-color: white;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 5px;
+}
