@@ -110,7 +110,7 @@ let title= svg2.append("text")
 svg2.append("g").attr("class", "slices").attr("name", "slices");
 
 function setData(attr){
-    d3.csv("../data/video_games_modified.csv").then(function(data) {
+    d3.csv("./data/video_games_modified.csv").then(function(data) {
         const dict = {}
         let total_sales=0
         for (let i = 0; i < data.length; i++) {
